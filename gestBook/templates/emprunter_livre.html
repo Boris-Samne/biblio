@@ -1,0 +1,25 @@
+<!-- Dans templates/emprunter_livre.html -->
+{% extends "base.html" %}
+
+{% block title %}
+Emprunter un Livre
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Emprunter un Livre </h1>
+
+    <form method="POST" action="{% url 'emprunter_livre' %}">
+        {% csrf_token %}
+
+        <label for="livre_id">Sélectionnez un livre :</label>
+        <select name="livre_id" class="form-select">
+            {% for livre in livres %}
+                <option value="{{ livre.id }}">{{ livre.titre }} - {{ livre.auteur }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="btn btn-primary mt-2">Emprunter</button>
+    </form>
+</div>
+{% endblock content %}

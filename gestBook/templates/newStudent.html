@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+Ajouter un étudiant
+{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <form method="post" action="{% url 'ajouter_etudiant' %}" class="needs-validation" novalidate>
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" class="form-control" id="nom" name="nom" required>
+            <div class="invalid-feedback">Veuillez fournir un nom.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="prenom">Prénom :</label>
+            <input type="text" class="form-control" id="prenom" name="prenom" required>
+            <div class="invalid-feedback">Veuillez fournir un ou des prénom(s).</div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateNais">Date de naissance :</label>
+            <input type="date" class="form-control" id="dateNais" name="dateNais" required>
+            <div class="invalid-feedback">Veuillez fournir une date de naissance.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="cycle">Cycle :</label>
+            <select class="form-control" id="cycle" name="cycle" required>
+                <option value="Deust">Deust</option>
+                <option value="Dut">Dut</option>
+                <option value="Licence">Licence</option>
+                <option value="Master">Master</option>
+                <option value="Ingénieur">Ingénieur</option>
+                <option value="Doctorat">Doctorat</option>
+                <!-- Ajoutez autant d'options que nécessaire -->
+            </select>
+            <div class="invalid-feedback">Veuillez sélectionner un cycle.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="niveau">Niveau :</label>
+            <select class="form-control" id="niveau" name="niveau" required>
+                <option value="S1">S1</option>
+                <option value="S2">S2</option>
+                <option value="S3">S3</option>
+                <option value="S4">S4</option>
+                <option value="S5">S5</option>
+                <option value="S6">S6</option>
+                <!-- Ajoutez autant d'options que nécessaire -->
+            </select>
+            <div class="invalid-feedback">Veuillez sélectionner un niveau.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+</div>
+
+{% endblock content %}
