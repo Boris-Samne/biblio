@@ -1,5 +1,1 @@
-coucou|coucouc|2023-12-07|20
-coucou|coucouc|2023-12-20|20
-le soleil des independances|Ahmadou Kourouma|2023-12-10|20
-coucou|coucouc|2023-12-08|1000
-test|coucouc|2023-12-10|30000
+le soleil des independances|Ahmadou Kourouma|2023-12-10|23

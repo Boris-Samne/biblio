@@ -14,10 +14,11 @@
       <style>
         body {
           font-family: 'Montserrat', sans-serif;
+          background-color: #FFEBEB
         }
         .navbar {
-          background-color: #fff;
-          border-bottom: 2px solid #e7e7e7;
+          background-color: #ffff;
+          border-bottom: 2px solid dark-red;
         }
         .navbar-brand, .navbar-nav .nav-link {
           color: #343a40 !important;
@@ -30,7 +31,7 @@
           transition: background-color 0.3s ease-in-out;
         }
         .navbar-toggler:hover {
-          background-color: #343a40 !important;
+          background-color: #ffff !important;
         }
         .navbar-toggler:focus {
           box-shadow: none !important;
@@ -81,7 +82,7 @@
           background-color: #ffc107;
         }
         .nav-item:nth-child(4) a {
-          background-color: #6c757d;
+          background-color: red;
         }
         .nav-item:nth-child(5) a {
           background-color: #6610f2;
@@ -92,7 +93,7 @@
       </style>
     </head>
 
-    <body>
+    <body background={url }>
 
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
@@ -102,29 +103,30 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Accueil</a>
+              <a class="nav-link" href="{% url 'authentification' %}">Deconnexion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Gestion des étudiants</a>
+              <a class="nav-link" href="{% url 'ajouter_etudiant' %}">Gestion des étudiants</a>
               <div class="sub-menu">
-                <a href="#">Ajout</a>
-                <a href="#">Modification</a>
-                <a href="#">Suppression</a>
+                <a href="{% url 'ajouter_etudiant' %}">Nouvel etudiant</a>
+                <a href="{% url 'etudiants' %}">Listes des étudiants</a>
+                <a href="{% url 'modifier_etudiants' %}">Modification ou supprimer</a>
               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Gestion des livres</a>
               <div class="sub-menu">
-                <a href="#">Ajout</a>
-                <a href="#">Modification</a>
-                <a href="#">Suppression</a>
+                <a href="{% url 'ajouter_livre' %}">Nouveau livre</a>
+                <a href="{% url 'livres' %}">Listes des livres</a>
+                <a href="{% url 'modifier_livres' %}">Modification ou supprimer</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Emprunter un livre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Gestion des retards</a>
+              <a class="nav-link" href="#">Gestion Emprunts</a>
+              <div class="sub-menu">
+                <a href="{% url 'emprunter_livre' %}">Nouvel Emprunt</a>
+                <a href="{% url 'modifier_emprunts' %}">Modification ou supprimer</a>
+              </div>
             </li>
           </ul>
         </div>
@@ -133,7 +135,7 @@
     {%block content%}
     
      {%endblock content%}
-</body>
+
 <!-- Ajoutez le script JavaScript de Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

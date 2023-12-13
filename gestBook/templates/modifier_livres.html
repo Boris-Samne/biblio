@@ -21,12 +21,13 @@ Modifier des Livres
           </tr>
         </thead>
         <tbody id="livresTableBody">
-          {% for livre in livres %}
+          {% for i, livre in livres %}
             <tr>
-              <td><input type="text" class="form-control" name="titres" value="{{ livre.titre }}"></td>
-              <td><input type="text" class="form-control" name="auteurs" value="{{ livre.auteur }}"></td>
-              <td><input type="text" class="form-control" name="dates_pub" value="{{ livre.datePub }}"></td>
-              <td><input type="text" class="form-control" name="quantites" value="{{ livre.quantite }}"></td>
+              
+              <td><input type="text" class="form-control" name="titre{{ i }}" value="{{ livre.titre }}"></td>
+              <td><input type="text" class="form-control" name="auteur{{ i }}" value="{{ livre.auteur }}"></td>
+              <td><input type="date" class="form-control" name="datePub{{ i }}" value="{{ livre.datePub }}"></td>
+              <td><input type="number" class="form-control" name="quantite{{ i }}" value="{{ livre.quantite }}"></td>
             </tr>
           {% endfor %}
         </tbody>

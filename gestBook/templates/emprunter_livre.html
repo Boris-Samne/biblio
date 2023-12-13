@@ -1,25 +1,36 @@
-<!-- Dans templates/emprunter_livre.html -->
 {% extends "base.html" %}
 
 {% block title %}
-Emprunter un Livre
+Emprunt de Livre
 {% endblock title %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>Emprunter un Livre </h1>
-
-    <form method="POST" action="{% url 'emprunter_livre' %}">
+<div class="container mt-5">
+    <h2>Emprunt de Livre</h2>
+    <form method="post" action="{% url 'emprunter_livre' %}" class="mt-4">
         {% csrf_token %}
 
-        <label for="livre_id">Sélectionnez un livre :</label>
-        <select name="livre_id" class="form-select">
-            {% for livre in livres %}
-                <option value="{{ livre.id }}">{{ livre.titre }} - {{ livre.auteur }}</option>
-            {% endfor %}
-        </select>
+        <!-- Choix du Livre -->
+        <div class="mb-3">
+            <label for="livre" class="form-label">Sélectionnez le Livre :</label>
+            <select class="form-select form-control" id="livre" name="livre" required>
+                {% for livre in livres %}
+                    <option value="{{ livre.titre }}">{{ livre.titre }} - {{ livre.auteur }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-        <button type="submit" class="btn btn-primary mt-2">Emprunter</button>
+        <!-- Choix de l'Étudiant -->
+        <div class="mb-3">
+            <label for="etudiant" class="form-label">Sélectionnez l'Étudiant :</label>
+            <select class="form-select form-control" id="etudiant" name="etudiant" required>
+                {% for etudiant in etudiants %}
+                    <option value="{{ etudiant.nom }} {{ etudiant.prenom }}">{{ etudiant.nom }} {{ etudiant.prenom }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Emprunter</button>
     </form>
 </div>
 {% endblock content %}

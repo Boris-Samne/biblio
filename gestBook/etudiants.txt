@@ -1,7 +1,1 @@
-samne|boris|2023-12-01|ingenieurs|s1
-AdminAdmin|xczs|2023-12-08|Licence|S4
-AdminAdmin|xczs|2023-12-10|Licence|S3
-coulibaly|prince|2023-12-10|Master|S4
-AdminAdmin|essaie|2023-12-08|Doctorat|S1
-AdminAdmin|essaie|2023-12-08|Doctorat|S1
-on|essaie|2023-12-08|Ingénieur|S4
+je modifie ici|j'ai éffacé en bas|2023-12-13|ingenieurs|S5
